@@ -15,10 +15,10 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Image
-              src="/logo.png"
+              src="/appsmartt.svg"
               alt="Appsmartt Logo"
-              width={120}
-              height={40}
+              width={140}
+              height={50}
               className="h-8 w-auto"
             />
           </div>
