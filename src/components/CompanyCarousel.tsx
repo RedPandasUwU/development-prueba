@@ -33,8 +33,8 @@ export default function CompanyCarousel() {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious aria-label="Empresa anterior" />
-            <CarouselNext aria-label="Siguiente empresa" />
+            <CarouselPrevious aria-label="Empresa anterior" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white disabled:opacity-50" />
+            <CarouselNext aria-label="Siguiente empresa" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white disabled:opacity-50" />
         </Carousel>
     );
 } 

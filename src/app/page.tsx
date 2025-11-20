@@ -162,7 +162,7 @@ export default function Home() {
                       alt="Agenda una consulta"
                       width={128}
                       height={128}
-                      className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110 transform transition-transform"
+                      className="w-full h-full opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                     />
                   </div>
                   <h4 className="text-xl font-bold mb-2 text-white">Agenda una consulta gratuita</h4>
@@ -179,7 +179,7 @@ export default function Home() {
                       alt="Dejanos tus requisitos"
                       width={128}
                       height={128}
-                      className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110 transform transition-transform"
+                      className="w-full h-full opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                     />
                   </div>
                   <h4 className="text-xl font-bold mb-2 text-white">Dejanos tus requisitos</h4>
@@ -196,7 +196,7 @@ export default function Home() {
                       alt="Obten tu software"
                       width={128}
                       height={128}
-                      className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110 transform transition-transform"
+                      className="w-full h-full opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                     />
                   </div>
                   <h4 className="text-xl font-bold mb-2 text-white">Obten tu software en tiempo Record</h4>
@@ -233,7 +233,7 @@ export default function Home() {
                   </p>
                   <div>
                     <p className="font-bold text-[#00E676]">{testimonial.name}</p>
-                    <p className="text-white/60">{testimonial.company}</p>
+                    <p className="text-white/80">{testimonial.company}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -320,12 +320,12 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-white/10">
         <div className="container mx-auto text-center">
-          <p className="text-white/60">© 2025 Appsmartt, LLC</p>
+          <p className="text-white/80">© 2025 Appsmartt, LLC</p>
           <div className="flex justify-center space-x-6 mt-4">
-            <a href="https://appsmartt.com/terminos-y-condiciones/" className="text-white/60 hover:text-[#00E676] transition-colors">
+            <a href="https://appsmartt.com/terminos-y-condiciones/" className="text-white/80 hover:text-[#00E676] transition-colors">
               Términos y Condiciones
             </a>
-            <a href="https://appsmartt.com/politica-de-privacidad/" className="text-white/60 hover:text-[#00E676] transition-colors">
+            <a href="https://appsmartt.com/politica-de-privacidad/" className="text-white/80 hover:text-[#00E676] transition-colors">
               Política de Privacidad
             </a>
           </div>
