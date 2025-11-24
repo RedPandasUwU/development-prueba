@@ -143,3 +143,18 @@
     transform: translateY(0px) translateX(0px);
   }
 }
+
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px #00E676, inset 0 0 2px #00E676;
+    border-color: #00E676;
+  }
+  50% {
+    box-shadow: 0 0 15px #00E676, inset 0 0 5px #00E676;
+    border-color: #66FFA6;
+  }
+}
+
+.neon-hover:hover {
+  animation: neon-pulse 2s infinite ease-in-out;
+}

@@ -2,10 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { MessageCircle, Play, Star, Menu } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import { MessageCircle, Star, Menu, PlayCircle } from "lucide-react";
 import ParticlesBackground from "@/components/Particles";
 import CompanyCarousel from "@/components/CompanyCarousel";
 import Image from "next/image";
+import CalendarSection from "@/components/CalendarSection";
 
 export default function Home() {
   return (
@@ -101,16 +103,17 @@ export default function Home() {
       <section className="py-16 px-4">
         <div className="container mx-auto text-center max-w-4xl">
           <h2 className="text-4xl md:text-6xl font-bold mb-12">¿QUE ES APPSMARTT?</h2>
-          <div className="relative">
-            <div className="w-96 h-64 mx-auto bg-gradient-to-br from-white/10 to-white/5 rounded-2xl flex items-center justify-center">
-              <Button
-                size="lg"
-                className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-full w-16 h-16"
-                aria-label="Reproducir video ¿Qué es Appsmartt?"
-              >
-                <Play className="w-8 h-8 ml-1" />
-              </Button>
-            </div>
+          <div className="relative w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,230,118,0.3)] border-2 border-[#00E676]/20 hover:scale-[1.02] transition-all duration-300">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/ycOlUh5KOWk"
+              title="¿Qué es Appsmartt?"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -151,52 +154,73 @@ export default function Home() {
               INTEGRA SOFTWARE DENTRO DE TU NEGOCIO
             </h3>
             <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-              <Card className="bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300 group relative">
+              <Card className="bg-white/5 border-2 border-[#00E676]/20 shadow-[0_0_20px_rgba(0,230,118,0.1)] hover:shadow-[0_0_40px_rgba(0,230,118,0.2)] hover:scale-[1.02] transition-all duration-300 group relative">
                 <div className="absolute -top-4 -left-4 bg-[#00E676] rounded-full w-12 h-12 flex items-center justify-center z-10 shadow-lg">
                   <span className="text-black font-bold text-2xl">1</span>
                 </div>
                 <CardContent className="p-6 text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-white/10 rounded-lg p-4 group-hover:bg-white/90 transition-colors duration-300">
+                  <div className="w-32 h-32 mx-auto mb-4 bg-white/10 rounded-lg relative group-hover:bg-white/90 transition-colors duration-300">
                     <Image
-                      src="/schedule.svg"
+                      src="/Iconos/agenda.png"
                       alt="Agenda una consulta"
                       width={128}
                       height={128}
-                      className="w-full h-full opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                      className="absolute inset-0 w-full h-full p-4 object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+                    />
+                    <Image
+                      src="/Iconos/Agendamiento.gif"
+                      alt="Agenda una consulta"
+                      width={128}
+                      height={128}
+                      className="absolute inset-0 w-full h-full p-4 object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110"
                     />
                   </div>
                   <h4 className="text-xl font-bold mb-2 text-white">Agenda una consulta gratuita</h4>
                 </CardContent>
               </Card>
-              <Card className="bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300 group relative">
+              <Card className="bg-white/5 border-2 border-[#00E676]/20 shadow-[0_0_20px_rgba(0,230,118,0.1)] hover:shadow-[0_0_40px_rgba(0,230,118,0.2)] hover:scale-[1.02] transition-all duration-300 group relative">
                 <div className="absolute -top-4 -left-4 bg-[#00E676] rounded-full w-12 h-12 flex items-center justify-center z-10 shadow-lg">
                   <span className="text-black font-bold text-2xl">2</span>
                 </div>
                 <CardContent className="p-6 text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-white/10 rounded-lg p-4 group-hover:bg-white/90 transition-colors duration-300">
+                  <div className="w-32 h-32 mx-auto mb-4 bg-white/10 rounded-lg relative group-hover:bg-white/90 transition-colors duration-300">
                     <Image
-                      src="/ideas.svg"
+                      src="/Iconos/proceso.png"
                       alt="Dejanos tus requisitos"
                       width={128}
                       height={128}
-                      className="w-full h-full opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                      className="absolute inset-0 w-full h-full p-4 object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+                    />
+                    <Image
+                      src="/Iconos/Requerimientos.gif"
+                      alt="Dejanos tus requisitos"
+                      width={128}
+                      height={128}
+                      className="absolute inset-0 w-full h-full p-4 object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110"
                     />
                   </div>
                   <h4 className="text-xl font-bold mb-2 text-white">Dejanos tus requisitos</h4>
                 </CardContent>
               </Card>
-              <Card className="bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300 group relative">
+              <Card className="bg-white/5 border-2 border-[#00E676]/20 shadow-[0_0_20px_rgba(0,230,118,0.1)] hover:shadow-[0_0_40px_rgba(0,230,118,0.2)] hover:scale-[1.02] transition-all duration-300 group relative">
                 <div className="absolute -top-4 -left-4 bg-[#00E676] rounded-full w-12 h-12 flex items-center justify-center z-10 shadow-lg">
                   <span className="text-black font-bold text-2xl">3</span>
                 </div>
                 <CardContent className="p-6 text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-white/10 rounded-lg p-4 group-hover:bg-white/90 transition-colors duration-300">
+                  <div className="w-32 h-32 mx-auto mb-4 bg-white/10 rounded-lg relative group-hover:bg-white/90 transition-colors duration-300">
                     <Image
-                      src="/happy.svg"
+                      src="/Iconos/tiempo-rapido.png"
                       alt="Obten tu software"
                       width={128}
                       height={128}
-                      className="w-full h-full opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                      className="absolute inset-0 w-full h-full p-4 object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+                    />
+                    <Image
+                      src="/Iconos/Tiempo.gif"
+                      alt="Obten tu software"
+                      width={128}
+                      height={128}
+                      className="absolute inset-0 w-full h-full p-4 object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110"
                     />
                   </div>
                   <h4 className="text-xl font-bold mb-2 text-white">Obten tu software en tiempo Record</h4>
@@ -215,22 +239,83 @@ export default function Home() {
       <section className="py-16 px-4 bg-white/5">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">¿QUÉ DICEN DE APPSMARTT?</h2>
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
             {[
-              { name: "Bauti Moran", company: "Bagasy Studio", rating: 5 },
-              { name: "Daniel", company: "CDF Motos", rating: 5 },
-              { name: "Pablo Vega", company: "Promerma", rating: 5 }
+              {
+                name: "Daniel",
+                company: "CDF Motos",
+                rating: 5,
+                videoId: "1akfb98fmq",
+                thumbnail: null
+              },
+              {
+                name: "Cliente Appsmartt",
+                company: "Testimonio",
+                rating: 5,
+                videoId: "jl25a6rko4",
+                thumbnail: "https://embed-ssl.wistia.com/deliveries/bbfaccbb96c534c3d82aed3f4bc7fe4f.jpg?image_play_button_size=2x&image_crop_resized=960x540&image_play_button_rounded=1&image_play_button_color=09FF9Be0"
+              },
+              {
+                name: "Cliente Appsmartt",
+                company: "Testimonio",
+                rating: 5,
+                videoId: "i1fg69ddq0",
+                thumbnail: "https://embed-ssl.wistia.com/deliveries/3dc77d6bb64e5e6c2990dcb9914bcc7de410dd1b.jpg?image_play_button_size=2x&image_crop_resized=960x540&image_play_button_rounded=1&image_play_button_color=09FF9Be0"
+              },
+              {
+                name: "Cliente Appsmartt",
+                company: "Testimonio",
+                rating: 5,
+                videoId: "stavvr615a",
+                thumbnail: "https://embed-ssl.wistia.com/deliveries/692cc0ac6c0fbeeb7f908f79cbc523d8.jpg?image_play_button_size=2x&image_crop_resized=960x540&image_play_button_rounded=1&image_play_button_color=09FF9Be0"
+              }
             ].map((testimonial, index) => (
-              <Card key={index} className="bg-white/5 border-white/20">
+              <Card key={index} className="bg-white/5 border-2 border-[#00E676]/20 shadow-[0_0_20px_rgba(0,230,118,0.1)] hover:shadow-[0_0_40px_rgba(0,230,118,0.2)] hover:scale-[1.02] transition-all duration-300">
                 <CardContent className="p-6">
+                  <p className="font-bold text-white mb-2">Excelente Servicio</p>
                   <div className="flex justify-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-[#00E676] text-[#00E676]" />
                     ))}
                   </div>
-                  <p className="text-white/90 mb-4">
-                    &ldquo;Excelente servicio y resultados increíbles. El equipo de Appsmartt superó todas nuestras expectativas.&rdquo;
-                  </p>
+
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <div className="mb-4 relative w-full aspect-video rounded-lg overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300 cursor-pointer group/video">
+                        {testimonial.thumbnail ? (
+                          <img
+                            src={testimonial.thumbnail}
+                            alt={`Testimonio ${testimonial.name}`}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <iframe
+                            src={`https://fast.wistia.net/embed/iframe/${testimonial.videoId}`}
+                            title={`Testimonio ${testimonial.name}`}
+                            className="absolute inset-0 w-full h-full pointer-events-none"
+                            frameBorder="0"
+                          ></iframe>
+                        )}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover/video:bg-black/40 transition-colors">
+                          <PlayCircle className="w-12 h-12 text-white opacity-80 group-hover/video:opacity-100 transition-opacity drop-shadow-lg" />
+                        </div>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl p-0 bg-black border-[#00E676]/20 overflow-hidden">
+                      <DialogTitle className="sr-only">Testimonio de {testimonial.name}</DialogTitle>
+                      <div className="aspect-video w-full">
+                        <iframe
+                          src={`https://fast.wistia.net/embed/iframe/${testimonial.videoId}?autoplay=1`}
+                          title={`Testimonio ${testimonial.name}`}
+                          allow="autoplay; fullscreen"
+                          allowFullScreen
+                          className="w-full h-full"
+                          frameBorder="0"
+                        ></iframe>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+
                   <div>
                     <p className="font-bold text-[#00E676]">{testimonial.name}</p>
                     <p className="text-white/80">{testimonial.company}</p>
@@ -251,17 +336,39 @@ export default function Home() {
           </p>
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
-              "NEXCAY", "MangArt", "ProfeAI", "ESMERALDAS MUZO",
-              "Saber Online", "Sergy Car", "COPPER APP", "cmcleaning",
-              "goldlup", "bitparner", "Frush", "cdfmotos"
+              { name: "NEXCAY", image: "/imagenes_apps/Nexcy.png" },
+              { name: "MangArt", image: "/imagenes_apps/MangArt.png" },
+              { name: "ProfeAI", image: "/imagenes_apps/profeAi.png" },
+              { name: "Esmeraldas Muzo", image: "/imagenes_apps/emeralda.png" },
+              { name: "Saber Online", image: "/imagenes_apps/Saber-online.png" },
+              { name: "Sergy Car", image: "/imagenes_apps/sergy.png" },
+              { name: "Copper App", image: "/imagenes_apps/copper app.png" },
+              { name: "Cmcleaning", image: "/imagenes_apps/cleaning.webp" },
+              { name: "Goldlup", image: "/imagenes_apps/goldlup.webp" },
+              { name: "Bitparner", image: "/imagenes_apps/bitparner.png" },
+              { name: "Frush", image: "/imagenes_apps/frush.png" },
+              { name: "Cdfmotos", image: "/imagenes_apps/cdfmotos.png" }
             ].map((project, index) => (
-              <Card key={index} className="bg-white/5 border-white/20 hover:bg-white/10 transition-colors cursor-pointer">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-[#00E676] rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-black font-bold">{project.charAt(0)}</span>
-                  </div>
-                  <h4 className="font-bold text-white">{project}</h4>
-                </CardContent>
+              <Card key={index} className="bg-white/5 border-2 border-[#00E676]/20 shadow-[0_0_20px_rgba(0,230,118,0.1)] hover:shadow-[0_0_40px_rgba(0,230,118,0.2)] hover:scale-[1.02] transition-all duration-300 cursor-pointer overflow-hidden group flex flex-col h-full">
+                <div className="relative w-full aspect-video overflow-hidden bg-black/20">
+                  {/* Blurred Background */}
+                  <img
+                    src={project.image}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 transition-transform duration-300 group-hover:scale-125"
+                    aria-hidden="true"
+                  />
+                  {/* Main Image */}
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="relative w-full h-full object-contain z-10 transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-4 bg-white/5 flex-grow flex items-center justify-center min-h-[80px] z-20 relative">
+                  <h4 className="font-bold text-white text-base text-center group-hover:text-[#00E676] transition-colors uppercase tracking-wider">{project.name}</h4>
+                </div>
               </Card>
             ))}
           </div>
@@ -291,11 +398,15 @@ export default function Home() {
                 answer: "Seguimos una metodología ágil en nuestros proyectos de desarrollo de software. Esto incluye reuniones para conocernos y dialogar sobre el proyecto, cotización, firma de contratos, desarrollo iterativo, pruebas, reuniones semanales o mensuales, y entrega final del software."
               }
             ].map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-white/20">
-                <AccordionTrigger className="text-left hover:text-[#00E676]">
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border border-white/10 rounded-lg mb-4 px-4 transition-all duration-300 hover:bg-white/5 neon-hover data-[state=open]:border-[#00E676] data-[state=open]:shadow-[0_0_15px_rgba(0,230,118,0.1)]"
+              >
+                <AccordionTrigger className="text-left hover:text-[#00E676] hover:no-underline py-4 text-lg">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-white/90">
+                <AccordionContent className="text-white/80 pb-4 text-base leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -304,18 +415,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto text-center max-w-4xl">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8">
-            <span className="block">Entonces es hora de comenzar a</span>
-            <span className="block text-[#00E676]">crear tu software con Appsmartt</span>
-          </h2>
-          <Button asChild size="lg" className="bg-[#00E676] text-black hover:bg-[#00E676]/90 text-lg px-8 py-6">
-            <a href="https://calendly.com/hola-appsmartt/30min" target="_blank" rel="noopener noreferrer">AGENDAR ASESORÍA</a>
-          </Button>
-        </div>
-      </section>
+      {/* Calendar Section */}
+      <CalendarSection />
 
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-white/10">
@@ -341,7 +442,14 @@ export default function Home() {
             rel="noopener noreferrer"
             aria-label="Contactar por WhatsApp"
           >
-            <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6 sm:w-7 sm:h-7"
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
           </a>
         </Button>
       </div>
