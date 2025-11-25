@@ -4,11 +4,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
+import Image from "next/image";
 
 const companies = [
-    "FlutterFlow", "S&P Solutions", "beezion", "SEINHSA",
-    "nexcay", "MEGA Industria", "Sergy Car", "Copper App"
+    "FlutterFlow", "S\u0026P Solutions", "beezion", "SEINHSA",
+    "nexcay", "Sergy Car", "Copper App"
 ];
+
+const iconMap: Record<string, string> = {
+    "S\u0026P Solutions": "sypsolucion.webp",
+    "SEINHSA": "seinshas.webp"
+};
 
 export default function CompanyCarousel() {
     const plugin = useRef(
@@ -26,7 +32,7 @@ export default function CompanyCarousel() {
                         <Card className="bg-transparent border-white/20">
                             <CardContent className="p-4">
                                 <div className="h-16 flex items-center justify-center">
-                                    <span className="text-white/80 font-medium">{company}</span>
+                                    <Image src={`/Iconos/${iconMap[company] ?? `${company.toLowerCase().replace(/\s+/g, "")}.webp`}`} alt={company} width={100} height={40} className="object-contain" />
                                 </div>
                             </CardContent>
                         </Card>

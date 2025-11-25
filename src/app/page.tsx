@@ -435,7 +435,7 @@ export default function Home() {
 
       {/* Floating WhatsApp Button */}
       <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 max-w-none">
-        <Button asChild size="lg" className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-full w-12 h-12 sm:w-14 sm:h-14 shadow-lg">
+        <Button asChild size="lg" className="bg-[#00E676] text-white hover:bg-[#00E676]/90 rounded-full w-12 h-12 sm:w-14 sm:h-14 shadow-lg">
           <a
             href="https://wa.me/573212834621"
             target="_blank"
